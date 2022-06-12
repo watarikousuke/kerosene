@@ -1,0 +1,10 @@
+package kerosene;
+
+public class Util {
+	
+	public static int charge (int litre) {
+		int amount = litre * 100;
+		return litre = amount;
+	}
+	
+}
