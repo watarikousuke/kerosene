@@ -15,21 +15,30 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
+		Util rate = new Util(75);
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("＜灯油注文システム＞");
 		System.out.println(" ");
-		System.out.println("灯油を注文したい量を入力してください。1Lあたり100円です。");
+		System.out.println("灯油を注文したい量を入力してください。1Lあたり"+rate.getRate()+"円です。");
 		System.out.print("(最大50Lまで注文できます。)：");
 		System.out.println(" ");
 		int litre = scanner.nextInt();
 		if (litre > 0 && litre <=50) {
-			int amountFinal = Util.charge(litre);
+			int amountFinal = Util.charge(litre, rate.getRate());
 			System.out.println(amountFinal+"円になります。料金の支払いをお願いします。");
 		} else {
 			System.out.println("正しい数値が入力されませんでした。");
 			System.out.println("お手数ですが初めからやり直してください。");
 		}
-		
+		System.out.println(" ");
+		System.out.println("次回の1Lあたりの料金を変更します。");
+		System.out.print("1Lあたり何円ですか？: ");
+		int changeRate = scanner.nextInt();
+		rate.setRate(changeRate);
+		System.out.println("1Lあたり"+rate.getRate()+"円に変更されました。");
 	}
+	
+
+
 
 }
