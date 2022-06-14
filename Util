@@ -1,9 +1,22 @@
 package kerosene;
 
 public class Util {
+	private int rate;
 	
-	public static int charge (int litre) {
-		int amount = litre * 100;
+	Util (int rate) {
+		this.rate = rate;
+	}
+	
+	public int getRate () {
+		return this.rate;
+	}
+	
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
+	
+	public static int charge (int litre, int rate) {
+		int amount = litre * rate;
 		return litre = amount;
 	}
 	
